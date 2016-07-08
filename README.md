@@ -3,14 +3,16 @@
 Language used: *Python*
 
 This repository contains three codes
-- Sentiment analysis using positive and negative word polarity list 
-	code: sentiment_polaritylist.py
+1. Sentiment analysis using positive and negative word polarity list 
+	* code: sentiment_polaritylist.py
 
-- Sentiment analysis using sentiwordnet
-	code: sentiment_swn.py
+2. Sentiment analysis using sentiwordnet
+	* code: sentiment_swn.py
 	
-- Corpus-based Automated generation of sentiment lexicon
-	code: to be uploaded soon
+3. Corpus-based Automated generation of sentiment lexicon
+	* code: to be uploaded soon
+
+Besides these major codes, we I have also included the code for *importance-vector* inside the folder *ivector*. The importance vector of a sentence returns a vector of length equal to the number of words of the sentence, with the weight corresponding to  each word as element of the vector. The weights are computed based on their sentiwordnet scores and word popularity ranking.
 	
 Run these files like:	
 ```
