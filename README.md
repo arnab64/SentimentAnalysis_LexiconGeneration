@@ -49,17 +49,34 @@ Miscellaneous
 ---------------------------
 Besides these major codes, we I have also included the code for a few utilities which can be used.
 
-Importance vector
- *importance-vector* which can be found inside the folder *ivector*. The importance vector of a sentence returns a vector of length equal to the number of words of the sentence, with the weight corresponding to  each word as element of the vector. The weights are computed based on their sentiwordnet scores and word popularity ranking.
+**Importance vector**
+The code for *importance-vector* can be found inside the folder *ivector*. The importance vector of a sentence returns a vector of length equal to the number of words of the sentence, with the weight corresponding to  each word as element of the vector. The weights are computed based on their sentiwordnet scores and word popularity ranking.
+```
+from ivector import ivector
+print ivector.getweights("Air Asia to start operations to Hong Kong soon")
+```
+which returns a vector like [0.0, 0.0, 0.0, 0.3006, 0.5037, 0.0, 0.0, 0.0, 0.1957], such that the sum of the elements in the vector is 1
 
-swnsense
-swnse
+**swnsense**
+swnsense returns the average positive and negative score of the five most similar synsets of a particular word.
 
-All done. So, these are the results I obtained on using the *airline-sentiment* dataset, available inside the folder *inputfiles*
+Results
+---------------------------
+All done. So, these are the results I obtained on using the *airline-sentiment* dataset to perform sentiment analysis.
+- Lexicon generated on = 1000 samples (out of 1800)
+- SVM trained on = 400 samples
+- SVM tested on = 400 samples 
 
+#####Results
 - Bipolar prediction accuracy = 86.75 %
 - Bipolar positive prediction accuracy = 96.17 %
 - Bipolar negative prediction accuracy = 62.83 %
 - Qualitative prediction accuracy = 69.75 %
 - Qualitative positive prediction accuracy = 85.02 %
 - Qualitative negative prediction accuracy = 30.97 % 
+
+Conclusion
+----------------------------
+It worked pretty well.
+
+Thanks for reading!
