@@ -12,6 +12,12 @@ The methodology will be described in detail in the report. However, the steps ca
 - Training and testing the SVM classifier on the extracted features.
 - Comparing the resulting sentiments with the original scores.
 
+#####Dataset
+The dataset that I used here is a self-made dataset for sentiment analysis, the details of which are presented below
+- Contains 1800 instances of news headlines relating to airlines (Cathay Pacific, Air India, British Airways etc.)
+- Each sentence is manually annotated by two persons, and the instances which have been equally annotated by the two persons are kept.
+- Sentiment is annotated on a scale from -3 to +3, with -3 being 'very bad news' and +3 being 'very good news'
+
 Besides these major codes, we I have also included the code for *importance-vector* which can be found inside the folder *ivector*. The importance vector of a sentence returns a vector of length equal to the number of words of the sentence, with the weight corresponding to  each word as element of the vector. The weights are computed based on their sentiwordnet scores and word popularity ranking.
 
 Generate the lexicon using. As lexicon generation is a time consuming process, I have developed the code to work part by part. You can change the variable *dofor* to whatever value you want and it resumes the lexicon generation from the last instance for *dofor* more instances. Like, initially using *dofor=250*, generates lexicon from 0 to 250, the second time it generates from 250 till 500, and so on.	
@@ -38,3 +44,12 @@ After classification, we need to measure the performance of classification. We m
 ```
 python 7_compare_results.py
 ```
+
+All done. So, these are the results I obtained on using the *airline-sentiment* dataset, available inside the folder *inputfiles*
+
+- Bipolar prediction accuracy = 86.75 %
+- Bipolar positive prediction accuracy = 96.17 %
+- Bipolar negative prediction accuracy = 62.83 %
+- Qualitative prediction accuracy = 69.75 %
+- Qualitative positive prediction accuracy = 85.02 %
+- Qualitative negative prediction accuracy = 30.97 % 
