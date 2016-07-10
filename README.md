@@ -19,14 +19,22 @@ Generate the lexicon using. As lexicon generation is a time consuming process, I
 python 1_generate_lexicon.py
 ```
 
+After the generation of lexicon, we use the lexicon for further processing. For the rest of the instances which were not used in generation of the lexicon, for each sentence, we extract the raw scores of individual words from the lexicon. 
 ```
-python sentiment_swn.py
+python 2_use_generated_lexicon.py
 ```
-In order to generate the lexicon, edit the *generate_lexicon.py* file to provide how many instances to train on.
+
+Now, to extract the features from the raw scores, we have the following code. The features extracted are (number of words with scores, highest score, least score, number of positive scores and negative scores, positive>negative? , etc)
 ```
-python generate_lexicon.py
+python 4_extract_features_lexicon.py
 ``` 
-After the lexicon is generated, you can use the lexicon to evaluate the sentiment by using:
+
+After the features are generated, the data is ready for classification. We use *Support Vector Machine* classification available in *scikit-learn* for our purpose. Half of the data is used for training and the remaining half for testing. Modify the indexes in the code accordingly. The results of the classification are available in the *results* folder.
 ```
-python uselexicon.py
+python 5_svm_classification.py
+```
+
+After classification, we need to measure the performance of classification. We measure the sentiment bipolar performance i.e. performance of declaring a sentiment as positive or negative, with no other information. Also, we measure qualitative performance i.e. performance of finding if a sentiment is positive or negative along with qualitative information i.e. just positive, more positive, very positive etc, likewise bad, very bad etc. In our experiments we have taken scores in the range -3 to +3, -3 being extremely bad and +3 means extremely good.
+```
+python 7_compare_results.py
 ```
