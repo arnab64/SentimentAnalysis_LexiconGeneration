@@ -59,6 +59,10 @@ which returns a vector like [0.0, 0.0, 0.0, 0.3006, 0.5037, 0.0, 0.0, 0.0, 0.195
 
 **swnsense**
 swnsense returns the average positive and negative score of the five most similar synsets of a particular word.
+```
+from ivector import swnsense
+print swnsense.makesense('amazing')
+```
 
 Results
 ---------------------------
