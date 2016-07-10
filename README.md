@@ -4,7 +4,8 @@ Language used: *Python*
 
 This repository contains the codes for generation of lexicon and using it to compute sentiment of sentences using machine learning approach (classification).
 
-#####Methodology
+Methodology
+----------------------------
 The methodology will be described in detail in the report which will be shared in a link here. The steps can be briefly mentioned as follows:
 
 - Generation of the corpus-dependent lexicon from a part of an annotated corpus.
@@ -13,13 +14,15 @@ The methodology will be described in detail in the report which will be shared i
 - Training and testing the SVM classifier on the extracted features.
 - Comparing the resulting sentiments with the original scores.
 
-#####Dataset
+Dataset
+----------------------------
 The dataset that I used here is a self-made dataset for sentiment analysis, the details of which are presented below
 - Contains 1800 instances of news headlines relating to airlines (Cathay Pacific, Air India, British Airways etc.)
 - Each sentence is manually annotated by two persons, and the instances which have been equally annotated by the two persons are kept.
 - Sentiment is annotated on a scale from -3 to +3, with -3 being 'very bad news' and +3 being 'very good news'
 
-#####Usage
+Usage
+-----------------------------
 Generate the lexicon using. As lexicon generation is a time consuming process, I have developed the code to work part by part. You can change the variable *dofor* to whatever value you want and it resumes the lexicon generation from the last instance for *dofor* more instances. Like, initially using *dofor=250*, generates lexicon from 0 to 250, the second time it generates from 250 till 500, and so on.	
 ```
 python 1_generate_lexicon.py
